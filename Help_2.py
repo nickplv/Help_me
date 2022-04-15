@@ -25,14 +25,14 @@ class Calculator:
 
     def carbohydrate_per_serving(self):
         return round((self.carbohydrate * self.serving) / self.DEFAULT_VALUE, 2)
-#
-# def requirements():
-#     serving = float(input("Please tell me the serving you are interested in: "))
-#     calories = float(input("please tell me the amount of calories per 100 gr: "))
-#     carbohydrate = float(input("please tell me the amount of carbohydrate per 100 gr: "))
-#     fat = float(input("please tell me the amount of fat per 100 gr: "))
-#     protein = float(input("please tell me the amount of protein per 100 gr: "))
-#     return serving, calories, carbohydrate, fat, protein
+
+ def requirements():
+     serving = float(input("Please tell me the serving you are interested in: "))
+     calories = float(input("please tell me the amount of calories per 100 gr: "))
+     carbohydrate = float(input("please tell me the amount of carbohydrate per 100 gr: "))
+     fat = float(input("please tell me the amount of fat per 100 gr: "))
+     protein = float(input("please tell me the amount of protein per 100 gr: "))
+     return serving, calories, carbohydrate, fat, protein
 
 def results():
     print(f"{user_input} has: \n"
@@ -50,23 +50,14 @@ while should_terminate:
 
 
     if "y" in Default_Value_Change:
-        serving = float(input("Please tell me the serving you are intrested in: "))
-        calories = float(input("please tell me the amount of calories per 100 gr: "))
-        carbohydrate = float(input("please tell me the amount of carbohydrate per 100 gr: "))
-        fat = float(input("please tell me the amount of fat per 100 gr: "))
-        protein = float(input("please tell me the amount of protein per 100 gr: "))
-
+        serving, calories, carbohydragte, fat, protein = requirements()
         food = Calculator(protein, fat, calories, carbohydrate, serving, DEFAULT_VALUE)
 
         results()
 
     else:
         DEFAULT_VALUE = int(input("Please define in per what value is your table based? "))
-        serving = float(input("Please tell me the serving you are intrested in: "))
-        calories = float(input("please tell me the amount of calories per 100 gr: "))
-        carbohydrate = float(input("please tell me the amount of carbohydrate per 100 gr: "))
-        fat = float(input("please tell me the amount of fat per 100 gr: "))
-        protein = float(input("please tell me the amount of protein per 100 gr: "))
+        serving, calories, carbohydragte, fat, protein = requirements()
 
         food = Calculator(protein, fat, calories, carbohydrate, serving, DEFAULT_VALUE)
 
@@ -77,14 +68,9 @@ while should_terminate:
         print("Thank you for using calculator")
         should_terminate = False
         
-        """κανονικά για πιο σωστό θα το έγραφα έτσι: DEFAULT_VALUE = int(input("Please define in per what value is your table based? "))
-                                                     serving = float(input(f"Please tell me the serving you are interested in: "))
-                                                     calories = float(input(f"please tell me the amount of calories per {DEFAULT_VALUE} gr: "))
-                                                     carbohydrate = float(input(f"please tell me the amount of carbohydrate per {DEFAULT_VALUE} gr: "))
-                                                     fat = float(input(f"please tell me the amount of fat per {DEFAULT_VALUE} gr: "))
-                                                     protein = float(input(f"please tell me the amount of protein per {DEFAULT_VALUE} gr: "))γραμμές 64 - 69
+        serving, calories, carbohydragte, fat, protein = requirements()
 
-Σκοπός μου όμως είναι να δω (πες οτι ήταν 100% ιδιες όπως τις έχω αφήσει εδώ) πως θα αποφύγω την επανάληψη?
+"""Σκοπός μου όμως είναι να δω (πες οτι ήταν 100% ιδιες όπως τις έχω αφήσει εδώ) πως θα αποφύγω την επανάληψη?
 
 με το function results το κατάφερα
 με το class calculator το κατάφερα. 
